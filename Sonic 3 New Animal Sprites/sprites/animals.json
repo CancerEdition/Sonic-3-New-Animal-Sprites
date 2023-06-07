@@ -1,0 +1,20 @@
+{
+	"flicky0":  { "File": "animals.bmp", "Rect": "114,4,16,15", "Center": "6,6" },
+	"flicky1":  { "File": "animals.bmp", "Rect": "134,4,16,15", "Center": "6,7" },
+	"flicky2":  { "File": "animals.bmp", "Rect": "4,4,11,20", "Center": "6,11" },
+	"cucky0":  { "File": "animals.bmp", "Rect": "172,4,15,16", "Center": "5,7" },
+	"cucky1":  { "File": "animals.bmp", "Rect": "154,4,14,16", "Center": "4,7" },
+	"cucky2":  { "File": "animals.bmp", "Rect": "19,4,15,23", "Center": "8,14" },
+	"pocky0":  { "File": "animals.bmp", "Rect": "39,38,16,24", "Center": "6,16" },
+	"pocky1":  { "File": "animals.bmp", "Rect": "59,39,16,23", "Center": "6,15" },
+	"pocky2":  { "File": "animals.bmp", "Rect": "38,4,15,24", "Center": "8,16" },
+	"pecky0":  { "File": "animals.bmp", "Rect": "21,38,14,24", "Center": "6,16" },
+	"pecky1":  { "File": "animals.bmp", "Rect": "4,41,13,21", "Center": "5,13" },
+	"pecky2":  { "File": "animals.bmp", "Rect": "57,4,15,21", "Center": "8,13" },
+	"rocky0":  { "File": "animals.bmp", "Rect": "245,5,16,15", "Center": "6,7" },
+	"rocky1":  { "File": "animals.bmp", "Rect": "265,5,16,15", "Center": "6,7" },
+	"rocky2":  { "File": "animals.bmp", "Rect": "76,4,15,20", "Center": "8,12" },
+	"ricky0":  { "File": "animals.bmp", "Rect": "217,4,24,16", "Center": "15,8" },
+	"ricky1":  { "File": "animals.bmp", "Rect": "191,5,22,15", "Center": "13,7" },
+	"ricky2":  { "File": "animals.bmp", "Rect": "95,4,15,24", "Center": "8,16" }
+}

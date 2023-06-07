@@ -1,0 +1,47 @@
+
+
+function bool Standalone.onWriteToSpriteTable(s16 px, s16 py, u16 renderQueue)
+{
+	u64 key = 0 
+	u8 flags = ((objA0.render_flags & render_flag.FLIP_X) ? SPRITE_FLAG_FLIP_X : 0) | (((objA0.sprite_attributes & sprite_attribute.PRIORITY) != 0) ? SPRITE_FLAG_PRIO : 0) 
+	if (objA0.update_address == 0x02c778 || objA0.update_address == 0x63720 || objA0.update_address == 0x63750)
+	{
+		if (objA0.sprite_attributes == 0x0580)
+		{
+			if (global.zone == 0x00 || global.zone == 0x02 || global.zone == 0x06 || global.zone == 0x09)
+				//Flicky - AIZ, MGZ, LBZ, LRZ
+				key = stringformat("flicky%d", objA0.animation.sprite)
+				if (objA0.hitbox_extends.y == 7) //Knuckles AIZ Intro
+					key = stringformat("ricky%d", objA0.animation.sprite)
+			else if (global.zone == 0x01 || global.zone == 0x03 || global.zone == 0x08 || global.zone == 0x0a)
+				//Rabbit - HCZ, CNZ, SOZ, SSZ
+				key = stringformat("pocky%d", objA0.animation.sprite)
+			else if (global.zone == 0x05)
+				//Penguin - ICZ
+				key = stringformat("pecky%d", objA0.animation.sprite)
+			else if (global.zone == 0x07 || global.zone == 0x04 || global.zone == 0x0b)
+				//Squirrel - MHZ, FBZ, DEZ
+				key = stringformat("ricky%d", objA0.animation.sprite)
+		}
+		else if (objA0.sprite_attributes == 0x0592)
+		{
+			if (global.zone == 0x00 || global.zone == 0x02 || global.zone == 0x06 || global.zone == 0x07 || global.zone >= 0x08) 
+				//Chicken in over half the game
+				//AIZ, MGZ, LBZ, MHZ, SOZ, LRZ, HPZ, SSZ, DEZ
+				key = stringformat("cucky%d", objA0.animation.sprite)
+			else if (global.zone == 0x01 || global.zone == 0x05)
+				//Seal - HCZ, ICZ
+				key = stringformat("rocky%d", objA0.animation.sprite)
+			else if (global.zone == 0x03 || global.zone == 0x04)
+				//Bird - CNZ, FBZ
+				key = stringformat("flicky%d", objA0.animation.sprite)
+		}
+	}
+	if (Renderer.hasCustomSprite(key))
+	{
+		Renderer.drawCustomSprite(key, px, py, 0x00, flags, renderQueue)
+		return true
+	}
+	else
+		return (base.Standalone.onWriteToSpriteTable(px, py, renderQueue))
+}
